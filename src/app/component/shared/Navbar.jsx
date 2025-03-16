@@ -11,6 +11,7 @@ const Navbar = () => {
  const pathname = usePathname();
    console.log(pathname)
    const activeColor = '#0070f3';
+   
   
     return (
 
@@ -48,7 +49,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 m-3">
           {
               navItems.map((item)=>(
-                <Link style={{color:pathname === `${item.path}` ? activeColor : 'white' }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link>
+                <Link style={{color: pathname === `${item.path}` ? activeColor : 'white', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link>
               ))
              }
           </ul>
