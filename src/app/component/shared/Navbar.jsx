@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 import { IoSearch } from "react-icons/io5";
 import { RiShoppingBagLine } from "react-icons/ri";
+import { navItems } from './navItems';
 
 const Navbar = () => {
  const pathname = usePathname();
@@ -36,9 +37,9 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow m-3">
-             {
+            {
               navItems.map((item)=>(
-                <Link className='font-bold m-3 hover:text-primary'href={item.path} key={item.path}>{item.title}</Link>
+                <Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link>
               ))
              }
             </ul>
@@ -49,7 +50,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 m-3">
           {
               navItems.map((item)=>(
-                <Link style={{color: pathname === `${item.path}` ? activeColor : 'white', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link>
+                <Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link>
               ))
              }
           </ul>
@@ -63,31 +64,5 @@ const Navbar = () => {
     );
 };
 
-const navItems = [
-  {
-      title: "Home",
-      path: "/"
-  },
-  {
-      title: "REB",
-      path: "/reb"
-  },
-  {
-      title: "33kV SS",
-      path: "/substation"
-  },
-  {
-      title: "Project work",
-      path: "/project"
-  },
-  {
-      title: "Overall Project work",
-      path: "/overall"
-  },
-  {
-      title: "Manpower",
-      path: "/manpower"
-  },
- 
-]
+
 export default Navbar;
