@@ -2,19 +2,19 @@
 export const navItems = [
     {
         title: "Home",
-        path: "/"
+        path: "/",
     },
     {
         title: "REB",
-        path: "/reb"
+        path: "/reb",
     },
     {
         title: "33kV SS",
-        path: "/substation"
+        path: "/substation",
     },
     {
         title: "Project work",
-        path: "/project"
+        path: "/project",
     },
     {
         title: "Overall Project work",
@@ -22,7 +22,9 @@ export const navItems = [
     },
     {
         title: "Manpower",
-        path: "/manpower"
+        path: "/manpower",
     },
    
   ]
+
+ 
