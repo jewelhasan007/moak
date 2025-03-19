@@ -3,30 +3,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-
-import { getSectionsDB } from '@/Homepage/getSections';
+import { navItemsDB } from './navItems';
+import { getMenuItemsDB } from '@/Homepage/getSections';
 
 const Navbar = () => {
  const pathname = usePathname();
    const activeColor = '#0070f3';
-const [allSections, setAllSections] = useState([])
-const loadSections = async () =>{
 
-  try {
-    const sections = await getSectionsDB();
+ const [allSections, setAllSections] = useState([])
+  useEffect(()=>{
+    const loadSections = async () =>{
+    const sections = await navItemsDB();
     setAllSections(sections.services)
-  } catch (error) {
-    console.error( 'failed to load', error)
-  }
- 
-}
-
-useEffect(()=>{
-  loadSections()  
-},[])
+    }
+    loadSections();  
+  },[]);
 
     return (
-<div className="navbar bg-base-100 shadow-sm">
+<div className="navbar bg-gray-100 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,5 +54,30 @@ useEffect(()=>{
     );
 };
 
+const allSections2 = [
+  {
+    
+title :"Home",
+path:"/"
+  },
+  {
+    title :"REB",
+    path: "/reb"
+  },
+  {
+
+    title:"33kV SS",
+    path :    "/substation"
+  },
+  {
+
+    title: "Overall Project work",
+    path: "/overall"
+  },
+{
+  title: "Manpower",
+path : "/manpower"
+}
+]
 
 export default Navbar;

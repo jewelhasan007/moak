@@ -1,6 +1,15 @@
-import { getSectionsDB } from "@/Homepage/getSections";
 
-export const sections = getSectionsDB();
- console.log('Section in navItems',sections)
-  
-   
+
+export const navItemsDB = async() =>{
+    try {
+        const resp = await fetch ('http://localhost:3000/component/sections/api');
+        const data = await resp.json();
+        return data
+    } catch (error) {
+        console.error(error)
+       
+    }
+}
+
+
+
