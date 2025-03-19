@@ -1,11 +1,9 @@
 "use client"
-import { signOut } from 'next-auth/react';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
-import {sections} from './navItems'
 import { getSectionsDB } from '@/Homepage/getSections';
 
 const Navbar = () => {
@@ -13,8 +11,14 @@ const Navbar = () => {
    const activeColor = '#0070f3';
 const [allSections, setAllSections] = useState([])
 const loadSections = async () =>{
-  const sections = await getSectionsDB();
-  setAllSections(sections.services)
+
+  try {
+    const sections = await getSectionsDB();
+    setAllSections(sections.services)
+  } catch (error) {
+    console.error( 'failed to load', error)
+  }
+ 
 }
 
 useEffect(()=>{
@@ -33,7 +37,7 @@ useEffect(()=>{
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         {
               allSections?.map((item)=>(
-                <li><Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link></li>
+                <li key={item.path}><Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link></li>
               ))
              }
       </ul>
@@ -44,7 +48,7 @@ useEffect(()=>{
     <ul className="menu menu-horizontal px-1">
     {
               allSections?.map((item)=>(
-                <li><Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link></li>
+                <li key={item.path}><Link style={{color: pathname === `${item.path}` ? activeColor : 'black', textDecoration: pathname === `${item.path}` ? 'underline' : 'none'  }} className='font-bold m-3 hover:text-primary' href={item.path} key={item.path}>{item.title}</Link></li>
               ))
              }
              </ul>
