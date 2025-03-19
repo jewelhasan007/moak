@@ -1,9 +1,9 @@
 import React from 'react';
 import Section from './Section';
-import { getSectionsDB } from './getSections';
 
-const Homepage = async() => {
-    const sections = await getSectionsDB();
+
+const Homepage = () => {
+   
 
     return (
         <div>
