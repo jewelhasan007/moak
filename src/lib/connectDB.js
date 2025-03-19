@@ -25,7 +25,6 @@ catch(error){
 }
 }
 
-console.log('the db value from mongoDB of car-doctor-pro sevice', db)
 export default connectDB
 
 // id: car-doctor-pro

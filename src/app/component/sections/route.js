@@ -19,7 +19,7 @@ export const GET = async () =>{
 // const bookingsCollection = db.collection('sections')
 // try {
 //     const res = await bookingsCollection.insertOne(newBooking)
-//     return Response.json({message : "New Booking Successfully"}, {status : 200})
+//     return Response.json({message : "New Section Added Successfully"}, {status : 200})
 // } catch (error) {
 //     return Response.json({message : "Somethings went wrong"}, {status : 400})   
 // }

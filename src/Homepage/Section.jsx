@@ -1,16 +1,22 @@
-
-import { navItems } from '@/app/component/shared/navItems';
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getSectionsDB } from './getSections';
 
-const Section = async () => {
-    console.log(navItems)
-    const sections = await getSectionsDB();
-    const allSections = sections.services;
+const Section =  () => {
+const [allSections, setAllSections] = useState([])
+const loadSections = async () =>{
+  const sections = await getSectionsDB();
+  setAllSections(sections.services)
+}
+
+useEffect(()=>{
+  loadSections()  
+},[])
+
  
     return (
-        <div className='grid md:grid-cols-3 gap-10 m-3 p-3'>
+        <div className='grid md:grid-cols-3 gap-10 m-3 p-3 mt-6'>
           
            {
             allSections?.map((item) => (  
