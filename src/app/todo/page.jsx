@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { getToDoDB } from './getToDo';
+import { FaEye, FaRegEdit } from "react-icons/fa";
+import { RiDeleteBinLine } from "react-icons/ri";
+import Link from 'next/link';
+
 const page = () => {
 
     const [allToDo, setAllToDo] = useState([])
@@ -44,19 +48,48 @@ const handleToDo = async (event) =>{
     return (
      <div>
 <div>
-<h1>The TODO LISTS</h1>
 <div className='grid md:grid-cols-3 gap-10'>
+<div   className="overflow-x-auto w-screen rounded-box border border-base-content/5 bg-base-100 m-3 p-3">
+  <table className="table ">
+    {/* head */}
+    <thead>
+      <tr>
+        <th>Sl. No.</th>
+        <th>Task Name</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Section</th>
+        <th>Status</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+  
+    <tbody>
 {
-    allToDo.map((todo) => (
-        <div key={todo._id} className='bg-gray-100'>
-            <li >Name: {todo.name}</li>
-            <li >Description:{todo.description}</li>
-            <li >Date: {todo.date}</li>
-            <li > Section: {todo.section}</li>
-            <li > Statu: {todo.status}</li>
-        </div>
+    allToDo.map((todo, index) => (
+        <tr key={todo._id}>
+        <th>{index+1}</th>
+        <td>{todo.name}</td>
+        <td>{todo.description}</td>
+        <td>{todo.date}</td>
+        <td>{todo.section}</td>
+        <td className={`text-${todo.status ==='Pending' ? 'red' : 'green'}-400`}>
+        {todo.status}</td>
+        <td><div className='flex'><Link href={'/'}><FaEye className='text-green-400 mr-3' /></Link>
+        <Link href={'/'}><FaRegEdit className='text-blue-400 mr-3' /></Link>
+        <Link href={'/'}><RiDeleteBinLine className='text-red-400' /></Link>
+        </div></td>
+      </tr>
+
     ))
 }
+    </tbody>
+  </table>
+</div>
+
+
+
+
 </div>
 
 </div>
@@ -97,7 +130,12 @@ const handleToDo = async (event) =>{
                 <label className='label'>
                 <span className='label-text'>Status</span>
                 </label>
-                <input  type="text" name='status' placeholder='Pending/ Done' className='input input-bordered' />
+                <select name="status" id="">
+                <option  value="Pending">Pending</option>
+                <option value="Done">Done</option>
+
+                </select>
+                
             </div>
             
         </div>
