@@ -46,9 +46,7 @@ const Homepage = () => {
     return (
         <div>
            <Section></Section>
-           <div className=' flex justify-end'>
-           <button className='btn btn-primary' onClick={handleAddSection} >Add Sections</button>
-           </div>
+          
         
         </div>
     );

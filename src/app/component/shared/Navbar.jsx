@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { navItemsDB } from './navItems';
-import { getMenuItemsDB } from '@/Homepage/getSections';
+
 
 const Navbar = () => {
  const pathname = usePathname();
@@ -36,7 +36,7 @@ const Navbar = () => {
              }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">CCDL VRM EE</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -47,37 +47,71 @@ const Navbar = () => {
              }
              </ul>
   </div>
+
+
+
+
   <div className="navbar-end">
-    <a className="btn">Button</a>
+
+  {/* Add Task Modal */}
+  <div className='mr-3'>
+      {/* The button to open modal */}
+      <label htmlFor="my_modal_6" className="btn btn-primary ">
+        Add Task
+      </label>
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
+        <div className="modal-action">
+            <label htmlFor="my_modal_6" className="btn">
+              Close!
+            </label>
+          </div>
+          <div className="flex flex-col items-center">
+                     {/* ADD TASK */}
+            <fieldset className=" fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box">
+              <legend className="fieldset-legend">Add Task</legend>
+
+<label className="floating-label">
+                <input type="text" placeholder="Task Name" className="input input-md" />
+               <span>Task Name</span>
+              </label>
+              <label className="floating-label">
+                <input type="text" placeholder="Task Name" className="input input-md" />
+               <span>Task Name</span>
+              </label>
+              <label className="floating-label">
+                <input type="text" placeholder="Task Name" className="input input-md" />
+               <span>Task Name</span>
+              </label>
+              <label className="floating-label">
+                <input type="text" placeholder="Task Name" className="input input-md" />
+               <span>Task Name</span>
+              </label>
+              <label className="floating-label">
+                <input type="text" placeholder="Task Name" className="input input-md" />
+               <span>Task Name</span>
+              </label>
+
+              
+
+              <button className="btn btn-neutral mt-4">ADD TASK</button>
+            </fieldset>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  {/* Login Button */}
+  <div>
+  <a className="btn">Login</a>
+</div>
   </div>
 </div>
     );
 };
 
-const allSections2 = [
-  {
-    
-title :"Home",
-path:"/"
-  },
-  {
-    title :"REB",
-    path: "/reb"
-  },
-  {
-
-    title:"33kV SS",
-    path :    "/substation"
-  },
-  {
-
-    title: "Overall Project work",
-    path: "/overall"
-  },
-{
-  title: "Manpower",
-path : "/manpower"
-}
-]
 
 export default Navbar;
