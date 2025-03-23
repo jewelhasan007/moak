@@ -4,6 +4,7 @@ import Navbar from "./component/shared/Navbar";
 import Footer from "./component/shared/Footer";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 
 const geistSans = Geist({
@@ -27,9 +28,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <ColorSchemeScript defaultColorScheme="auto" />
         <Navbar></Navbar>
         <ToastContainer />
+        <MantineProvider defaultColorScheme="auto">
         {children}
+        </MantineProvider>
         <Footer></Footer>
       </body>
     </html>
