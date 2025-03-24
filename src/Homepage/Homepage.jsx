@@ -5,44 +5,28 @@ import Swal from 'sweetalert2';
 
 
 const Homepage = () => {
-     const handleAddSection = () =>{
-        console.log('handleAddSection hitted')
-        Swal.fire({
-            title: "Add New Sections",
-            input: "text",
-            inputAttributes: {
-              autocapitalize: "off"
-            },
-            showCancelButton: true,
-            confirmButtonText: "Add",
-            showLoaderOnConfirm: true,
-            preConfirm: async (login) => {
-              try {
-                const githubUrl = 'http://localhost:3000/component/sections/api';
-                const response = await fetch(githubUrl);
-                if (!response.ok) {
-                  return Swal.showValidationMessage(`
-                    ${JSON.stringify(await response.json())}
-                  `);
-                }
-                return response.json();
-              } catch (error) {
-                Swal.showValidationMessage(`
-                  Request failed: ${error}
-                `);
-              }
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
-                title: `${result.value.login}'s avatar`,
-                imageUrl: result.value.avatar_url
-              });
-            }
-          });
-     }
-
+    const handleToDo = async (event) => {
+        event.preventDefault();
+        const newTodo = {
+          name: event.target.name.value,
+          description: event.target.description.value,
+          date: event.target.date.value,
+          section: event.target.section.value,
+          status: event.target.status.value,
+        };
+        console.log(newTodo);
+        const resp = await fetch("http://localhost:3000/todo/api", {
+          method: "POST",
+          body: JSON.stringify(newTodo),
+          headers: {
+            "content-type": "application/json",
+          },
+        });
+    
+        const response = await resp?.json();
+        toast.success(response?.message);
+        event.target.reset();
+      };
     return (
         <div>
            <Section></Section>

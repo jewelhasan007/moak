@@ -1,34 +1,67 @@
 { "allSections" : [
     {
     "title" :"Home",
-    "path":"/"
+    "path":"/",
+    "section":"home"
+    },
+
+    {
+      "title" :"CHMC",
+      "path": "/chmc",
+      "section":"chmc"
     },
     {
       "title" :"REB",
-      "path": "/reb"
+      "path": "/reb",
+      "section":"reb"
     },
     {
   
       "title":"33kV SS",
-      "path" : "/substation"
+      "path" : "/substation",
+      "section":"substation"
     },
     {
       "title" :"Email",
-      "path": "/email"
+      "path": "/email",
+      "section":"email"
     },
     {
   
       "title":"Note",
-      "path" : "/note"
+      "path" : "/note",
+      "section":"note"
     },
     {
-      "title": "Overall Project work",
-      "path": "/overall"
+      "title": "Project work",
+      "path": "/overall",
+      "section":"overall"
     },
     {
         "title": "Manpower",
-        "path" : "/manpower"
-     }
+        "path" : "/manpower",
+        "section":"manpower"
+     },
+    {
+        "title": "Mech Work",
+        "path" : "/mech",
+        "section":"mech"
+     },
+     {
+      "title": "Civil Work",
+      "path" : "/civil",
+      "section":"civil"
+   },
+   {
+    "title": "Purchase",
+    "path" : "/purchase",
+    "section":"purchase"
+ },
+ {
+  "title": "Miscellaneous",
+  "path" : "/miscellaneous",
+  "section":"miscellaneous"
+ }
   ]
 }
   

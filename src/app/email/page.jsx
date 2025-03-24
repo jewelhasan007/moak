@@ -35,7 +35,7 @@ useEffect( ()=>{
     console.log(rebData)
     return (
         <div className="mt-2 p-4">
-        <h1 className="text-center underline text-1xl m-1">REB & NPBS-1 Related Work Lists</h1>
+        <h1 className="text-center underline text-1xl m-1">Email Lists</h1>
   
         <div className="overflow-x-auto mt-4">
           <table className="table table-xs">
