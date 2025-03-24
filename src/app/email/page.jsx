@@ -21,18 +21,18 @@ useEffect(()=>{
 },[pathname])
 
 
-const [rebData, setRebData] = useState([])
+const [emailData, setEmailData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`http://localhost:3000/reb/api/${currentSection}`)
+     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/email/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
-    setRebData(result.sectionList)
+    setEmailData(result.sectionList)
         }
 useEffect( ()=>{
       loadData()
     },[])
 
-    console.log(rebData)
+
     return (
         <div className="mt-2 p-4">
         <h1 className="text-center underline text-1xl m-1">Email Lists</h1>
@@ -51,7 +51,7 @@ useEffect( ()=>{
               </tr>
             </thead>
             <tbody>
-              {rebData.map((substation, index) => (
+              {emailData.map((substation, index) => (
                 <tr key={substation._id}>
                   <th>{index + 1}</th>
                   <td>{substation.name}</td>

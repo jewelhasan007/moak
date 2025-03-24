@@ -22,7 +22,7 @@ const page = () => {
 
   const [substationData, setSubstationData] = useState([]);
   const loadData = async () => {
-    const resp = await fetch(`http://localhost:3000/reb/api/${currentSection}`);
+    const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/substation/api/${currentSection}`);
     const result = await resp.json();
     console.log(result.sectionList);
     setSubstationData(result.sectionList);
@@ -33,7 +33,9 @@ const page = () => {
 
   return (
     <div className="mt-2 p-4">
-      <h1 className="text-center underline text-1xl m-1">33KV Substation & Adex Engg Related Work Lists</h1>
+      <h1 className="text-center underline text-1xl m-1">
+        33KV Substation & Adex Engg Related Work Lists
+      </h1>
 
       <div className="overflow-x-auto mt-5">
         <table className="table table-xs">
@@ -42,13 +44,13 @@ const page = () => {
               <th></th>
               <th>Task Name</th>
               <th>Description</th>
-              <th>Date</th>            
+              <th>Date</th>
               <th>Tag</th>
               <th className="text-center">Status</th>
               <th>Remarks</th>
             </tr>
           </thead>
-          <tbody >
+          <tbody>
             {substationData.map((substation, index) => (
               <tr key={substation._id}>
                 <th>{index + 1}</th>
@@ -59,7 +61,9 @@ const page = () => {
                 <td
                   className={`text-${
                     substation.status === "Pending" ? "red" : "green"
-                  }-400 bg-${substation.status === "Pending" ? "red" : ""}-300 rounded-2xl text-center font-bold`}
+                  }-400 bg-${
+                    substation.status === "Pending" ? "red" : ""
+                  }-900 rounded-2xl text-center font-bold`}
                 >
                   {substation.status}
                 </td>

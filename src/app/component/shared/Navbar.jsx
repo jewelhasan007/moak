@@ -67,7 +67,7 @@ const [modalClose, setModalClose] = useState(false);
             ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-sm">CCDL VRM EE</a>
+       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">CCDL VRM EE</Link></button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-sm menu-horizontal px-1 ">
@@ -93,11 +93,11 @@ const [modalClose, setModalClose] = useState(false);
       <div className="navbar-end">
       
 {/* Add Modal Form*/}
-<FormModal></FormModal>
+<FormModal ></FormModal>
 
         {/* Login Button */}
         <div>
-          <a className="btn">Login</a>
+        {/* <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Login</Link></button> */}
         </div>
       </div>
     </div>

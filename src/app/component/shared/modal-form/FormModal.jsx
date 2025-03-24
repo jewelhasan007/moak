@@ -28,7 +28,7 @@ const FormModal = () => {
     console.log("Form Data Submitted:", formData);
     // You can replace this with any form submission logic (API call, etc.)
 
-    const resp = await fetch("http://localhost:3000/add-task/api", {
+    const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/add-task/api`, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
@@ -36,12 +36,12 @@ const FormModal = () => {
       },
     });
 
-    const response = await resp?.json();
-    console.log(response);
-    if (response) {
+    const NextResponse = await resp?.json();
+    console.log(NextResponse);
+    if (NextResponse) {
       router.push("/");
 
-      toast.success(response?.message);
+      toast.success(NextResponse?.message);
     }
 
     setShowModal(false); // Close the modal after submitting
@@ -60,7 +60,7 @@ const FormModal = () => {
 
   return (
     <div>
-      <button className="btn btn-primary" onClick={openModal}>
+      <button className="btn btn-sm btn-outline btn-primary mr-3" onClick={openModal}>
         Add Task
       </button>
 
@@ -120,6 +120,7 @@ const FormModal = () => {
                 <option>note</option>
                 <option>overall</option>
                 <option>purchase</option>
+                <option>reb</option>
                 <option>substation</option>
                 
               </select>

@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [rebData, setRebData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`http://localhost:3000/reb/api/${currentSection}`)
+     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/reb/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setRebData(result.sectionList)

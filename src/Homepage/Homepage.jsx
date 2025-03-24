@@ -15,7 +15,7 @@ const Homepage = () => {
           status: event.target.status.value,
         };
         console.log(newTodo);
-        const resp = await fetch("http://localhost:3000/todo/api", {
+        const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/todo/api`, {
           method: "POST",
           body: JSON.stringify(newTodo),
           headers: {
@@ -23,12 +23,12 @@ const Homepage = () => {
           },
         });
     
-        const response = await resp?.json();
-        toast.success(response?.message);
+        const NextResponse = await resp?.json();
+        toast.success(NextResponse?.message);
         event.target.reset();
       };
     return (
-        <div>
+        <div className='h-screen'>
            <Section></Section>
           
         
