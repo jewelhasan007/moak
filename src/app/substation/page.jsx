@@ -48,18 +48,18 @@ const page = () => {
               <th>Remarks</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {substationData.map((substation, index) => (
               <tr key={substation._id}>
                 <th>{index + 1}</th>
                 <td>{substation.name}</td>
                 <td>{substation.description}</td>
                 <td>{substation.date}</td>
-                <td >{substation.tag}</td>
+                <td>{substation.tag}</td>
                 <td
                   className={`text-${
                     substation.status === "Pending" ? "red" : "green"
-                  }-400 bg-${substation.status === "Pending" ? "red" : ""}-200 rounded-2xl text-center font-bold`}
+                  }-400 bg-${substation.status === "Pending" ? "red" : ""}-300 rounded-2xl text-center font-bold`}
                 >
                   {substation.status}
                 </td>

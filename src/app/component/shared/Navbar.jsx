@@ -67,7 +67,7 @@ const [modalClose, setModalClose] = useState(false);
             ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">CCDL VRM EE</a>
+        <a className="btn btn-ghost text-sm">CCDL VRM EE</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-sm menu-horizontal px-1 ">
