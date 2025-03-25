@@ -22,7 +22,7 @@ const page = () => {
 
   const [substationData, setSubstationData] = useState([]);
   const loadData = async () => {
-    const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/substation/api/${currentSection}`);
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/substation/api/${currentSection}`);
     const result = await resp.json();
     console.log(result.sectionList);
     setSubstationData(result.sectionList);

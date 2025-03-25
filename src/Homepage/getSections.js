@@ -1,8 +1,13 @@
 import axios from "axios";
 
 export const getSectionsDB = async  () =>{
- const resp =  await axios.get(`${NEXT_PUBLIC_BASE_URL}/component/sections/api`);
- console.log('fetch data', resp.data)
- return resp.data
+    try {
+  const resp =  await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/component/sections/api`);
+
+ return resp.data       
+    } catch (error) {
+        return []
+    }
+
 }
 

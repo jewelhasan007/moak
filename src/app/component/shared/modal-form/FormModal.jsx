@@ -28,7 +28,7 @@ const FormModal = () => {
     console.log("Form Data Submitted:", formData);
     // You can replace this with any form submission logic (API call, etc.)
 
-    const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/add-task/api`, {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/add-task/api`, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
@@ -36,12 +36,12 @@ const FormModal = () => {
       },
     });
 
-    const NextResponse = await resp?.json();
-    console.log(NextResponse);
-    if (NextResponse) {
+    const Response = await resp?.json();
+    console.log(Response);
+    if (Response) {
       router.push("/");
 
-      toast.success(NextResponse?.message);
+      toast.success(Response?.message);
     }
 
     setShowModal(false); // Close the modal after submitting

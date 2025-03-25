@@ -1,4 +1,5 @@
 import connectDB from "@/lib/connectDB";
+import { NextResponse } from "next/server";
 
 
 export const GET = async (request, {params}) =>{
@@ -8,9 +9,9 @@ export const GET = async (request, {params}) =>{
     const sectionCollections = db.collection('add-task')
     try {
        const sectionList = await  sectionCollections.find({section: params.section}).toArray();
-       return NextResponse.json({sectionList})
+       return Response.json({sectionList})
     } catch (error) {
-     console.log(error)  
-    return NextResponse.json({message: "No Data Found", error}) 
+
+    return Response.json({message: "No Data Found", error}) 
     }
 }

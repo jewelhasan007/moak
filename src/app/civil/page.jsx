@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [civilData, setCivilData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/civil/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/civil/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setCivilData(result.sectionList)

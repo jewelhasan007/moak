@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [mechData, setMechData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/mech/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/mech/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setMechData(result.sectionList)

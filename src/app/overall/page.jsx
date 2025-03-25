@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [overallData , setOverallData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/overall/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/overall/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setOverallData(result.sectionList)

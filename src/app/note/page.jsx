@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [noteData, setNoteData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/note/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/note/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setNoteData(result.sectionList)

@@ -1,9 +1,7 @@
 "use client"
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { getSectionsDB } from './getSections';
-import { getAddTaskDB } from './getAddTask';
 
+import React, { useEffect, useState } from 'react';
+import { getAddTaskDB } from './getAddTask';
 
 const Section =  () => {
 // const [allSections, setAllSections] = useState([])

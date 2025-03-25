@@ -28,7 +28,7 @@ const page = () => {
       status: event.target.status.value,
     };
     console.log(newTodo);
-    const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/todo/api`, {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/todo/api`, {
       method: "POST",
       body: JSON.stringify(newTodo),
       headers: {
@@ -36,8 +36,8 @@ const page = () => {
       },
     });
 
-    const NextResponse = await resp?.json();
-    toast.success(NextResponse?.message);
+    const Response = await resp?.json();
+    toast.success(Response?.message);
     event.target.reset();
   };
 

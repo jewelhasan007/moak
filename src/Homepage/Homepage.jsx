@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Section from './Section';
-import Swal from 'sweetalert2';
+
 
 
 const Homepage = () => {
@@ -15,7 +15,7 @@ const Homepage = () => {
           status: event.target.status.value,
         };
         console.log(newTodo);
-        const resp = await fetch(`${NEXT_PUBLIC_BASE_URL}/todo/api`, {
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/todo/api`, {
           method: "POST",
           body: JSON.stringify(newTodo),
           headers: {
@@ -23,8 +23,8 @@ const Homepage = () => {
           },
         });
     
-        const NextResponse = await resp?.json();
-        toast.success(NextResponse?.message);
+        const res = await resp?.json();
+        toast.success(res?.message);
         event.target.reset();
       };
     return (

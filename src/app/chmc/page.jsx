@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [chmcData, setChmcData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`NextResponsechmc/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/chmc/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setChmcData(result.sectionList)

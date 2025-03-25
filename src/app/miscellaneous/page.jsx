@@ -23,7 +23,7 @@ useEffect(()=>{
 
 const [miscellaneousData, setMiscellaneousData] = useState([])
     const loadData = async () =>{
-     const resp =await fetch(`${NEXT_PUBLIC_BASE_URL}/miscellaneous/api/${currentSection}`)
+     const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/miscellaneous/api/${currentSection}`)
     const result = await resp.json()
     console.log(result.sectionList)
     setMiscellaneousData(result.sectionList)
