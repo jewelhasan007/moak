@@ -20,15 +20,15 @@ useEffect(()=>{
 console.log(allTask)
  
     return (
-       <div>
+       <div >
 
       <div className='mt-3'>
         {/* name of each tab group should be unique */}
-<div className="tabs tabs-box">
+<div className="tabs tabs-box h-screen ">
   <input type="radio" name="my_tabs_6" className="tab" aria-label="All task" />
-  <div className="tab-content bg-base-100 border-base-300 p-6">
+  <div className="tab-content bg-base-100 border-base-300 p-6  ">
    
-  <div className="overflow-x-auto mt-4">
+  <div className="overflow-x-auto mt-4   h-screen">
     <table className="table table-xs">
       <thead className="text-left">
         <tr>
