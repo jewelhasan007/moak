@@ -56,7 +56,7 @@ console.log(allTask)
             >
               {substation.status}
             </td>
-            <td></td>
+            <td><button className='btn btn-xs outline'>Edit</button></td>
           </tr>
         ))}
       </tbody>
