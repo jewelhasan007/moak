@@ -9,9 +9,9 @@ export const GET = async (request, {params}) =>{
     const sectionCollections = db.collection('add-task')
     try {
        const sectionList = await  sectionCollections.find({section: sectionFound.section}).toArray();
-       return Response.json({sectionList})
+       return NextResponse.json({sectionList})
     } catch (error) {
  
-    return Response.json({message: "No Data Found", error}) 
+    return NextResponse.json({message: "No Data Found", error}) 
     }
 }

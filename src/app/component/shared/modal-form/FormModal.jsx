@@ -36,12 +36,12 @@ const FormModal = () => {
       },
     });
 
-    const Response = await resp?.json();
-    console.log(Response);
-    if (Response) {
+    const NextResponse = await resp?.json();
+    console.log(NextResponse);
+    if (NextResponse) {
       router.push("/");
 
-      toast.success(Response?.message);
+      toast.success(NextResponse?.message);
     }
 
     setShowModal(false); // Close the modal after submitting

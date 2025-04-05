@@ -36,8 +36,8 @@ const page = () => {
       },
     });
 
-    const Response = await resp?.json();
-    toast.success(Response?.message);
+    const NextResponse = await resp?.json();
+    toast.success(NextResponse?.message);
     event.target.reset();
   };
 
