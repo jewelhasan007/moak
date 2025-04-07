@@ -1,32 +1,17 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import DayDate from './DayDate';
+
 
 const Footer = () => {
-const [currentDay, setCurrentDay] = useState('');
 
-const todayDate = new Date();
-const date = todayDate.getDate()
-
-
-// useEffect(() => {
- 
-//   const day = new Date(year,month).toLocaleDateString("en-DE",{
-//     month: "short",
-//     day: "2-digit",
-//     year: "numeric",
-//     minute: "2-digit",
-//     hour: "2-digit",
-//     timeZone: 'Australia/Sydney'
-// }).toLocaleLowerCase();
-//   setCurrentDay(day)
-// },[])
 
     return (
 // footer-1
 <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 pt-30">
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by CCDL</p>
-    <p>{date}</p>
+ <DayDate></DayDate>
   </aside>
 </footer>
 
