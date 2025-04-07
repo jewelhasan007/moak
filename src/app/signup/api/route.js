@@ -12,7 +12,7 @@ export const POST = async (request) => {
         }
         const hashPassword = bcrypt.hashSync(newUser.password, 14);
         const resp = await userCollection.insertOne({...newUser, password: hashPassword})
-
+        
         return Response.json({message: "User Created"}, {status: 200})
     } catch (error) {
         return Response.json({message: "Something Wrong", error}, {status: 500})
