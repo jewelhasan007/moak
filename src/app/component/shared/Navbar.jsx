@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { navItemsDB } from "./navItems";
 import { toast } from "react-toastify";
 import FormModal from "./modal-form/FormModal";
+import Profile from "./Profile";
 
 
 const Navbar = () => {
@@ -94,6 +95,10 @@ const [modalClose, setModalClose] = useState(false);
       
 {/* Add Modal Form*/}
 <FormModal ></FormModal>
+
+    {
+    pathname === "/" ? <Link href={'/login'}><button className="btn btn-sm btn-primary">Login</button></Link> : <Profile></Profile>
+  }  
 
         {/* Login Button */}
         <div>
