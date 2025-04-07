@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { getAddTaskDB } from './getAddTask';
+import { FaRegEdit } from 'react-icons/fa';
+import { RiDeleteBin5Line } from "react-icons/ri";
+import Link from 'next/link';
 
 const Section =  () => {
 // const [allSections, setAllSections] = useState([])
@@ -20,16 +23,16 @@ useEffect(()=>{
 console.log(allTask)
  
     return (
-       <div >
+       <div className='' >
 
-      <div className='mt-3'>
+      <div className='mt-3 '>
         {/* name of each tab group should be unique */}
-<div className="tabs tabs-box h-screen ">
+<div className="tabs tabs-box ">
   <input type="radio" name="my_tabs_6" className="tab" aria-label="All task" />
   <div className="tab-content bg-base-100 border-base-300 p-6  ">
    
-  <div className="overflow-x-auto mt-4   h-screen">
-    <table className="table table-xs">
+  <div className="overflow-x-auto mt-4 max-h-screen   ">
+    <table className="table table-xs  ">
       <thead className="text-left">
         <tr>
           <th></th>
@@ -38,7 +41,8 @@ console.log(allTask)
           <th>Date</th>            
           <th>Tag</th>
           <th className="text-center">Status</th>
-          <th>Remarks</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody className='text-black'>
@@ -56,7 +60,8 @@ console.log(allTask)
             >
               {substation.status}
             </td>
-            <td><button className='btn btn-xs outline'>Edit</button></td>
+            <td className='text-gray-400 tooltip' data-tip="Edit"><Link href={substation.name}><FaRegEdit /></Link></td>
+            <td className='text-red-400 tooltip' data-tip="Delete"><Link href={substation.name}><RiDeleteBin5Line /></Link></td>
           </tr>
         ))}
       </tbody>
