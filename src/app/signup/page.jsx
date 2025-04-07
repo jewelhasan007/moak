@@ -67,7 +67,7 @@ const page = () => {
           </form>
         </fieldset>
         <div>
-            <p>Already have an account?<Link href={'/signin'} className='text-blue-600'> Login Here</Link></p>
+            <p>Already have an account?<Link href={'/login'} className='text-blue-600'> Login Here</Link></p>
         </div>
       </div>
     </div>

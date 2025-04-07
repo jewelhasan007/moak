@@ -97,7 +97,7 @@ const [modalClose, setModalClose] = useState(false);
 <FormModal ></FormModal>
 
     {
-    pathname === "/" ? <Link href={'/signin'}><button className="btn btn-sm btn-primary">Login</button></Link> : <Profile></Profile>
+    pathname === "/" ? <Link href={'/login'}><button className="btn btn-sm btn-primary">Login</button></Link> : <Profile></Profile>
   }  
 
         {/* Login Button */}
