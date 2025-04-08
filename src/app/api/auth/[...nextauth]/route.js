@@ -35,7 +35,7 @@ async authorize(credentials){
 ],
 callbacks : {},
 pages: {
-    signIn: '/login'
+    signIn: `${process.env.NEXT_PUBLIC_BASE_URL}/login`
 
 },
 }) 
