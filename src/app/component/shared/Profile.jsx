@@ -1,3 +1,5 @@
+import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 import React from 'react';
 
 const Profile = () => {
@@ -21,7 +23,7 @@ const Profile = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li onClick={()=> signOut()}><a>Logout</a></li>
       </ul>
     </div>
   </div>

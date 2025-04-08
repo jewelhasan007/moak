@@ -1,9 +1,24 @@
+"use client"
+import { redirect } from 'next/dist/server/api-utils';
 import Link from 'next/link';
 import React from 'react';
+import {signIn} from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
+  const router = useRouter();
   const handleLogin = async(event) => {
     event.preventDefault();
+   const email= event.target.email.value;
+   const password= event.target.password.value
+   const resp = await signIn("credentials",{
+    email, 
+    password, 
+    redirect :false
+   })
+  if(resp.status === 200){
+    router.push('/')
+  }
   }
     return (
         <div>
@@ -21,9 +36,9 @@ const page = () => {
         <fieldset className="fieldset">
           <form  onSubmit={handleLogin}>
           <label className="fieldset-label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input type="email" name='email' className="input" placeholder="Email" />
           <label className="fieldset-label">Password</label>
-          <input type="password" className="input" placeholder="Password" />
+          <input type="password" name='password' className="input" placeholder="Password" />
           <div><a className="link link-hover">Forgot password?</a></div>
           <button type='submit' className="btn btn-neutral mt-4">Login</button>
 
