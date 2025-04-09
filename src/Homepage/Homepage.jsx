@@ -1,11 +1,14 @@
 "use client"
 import React from 'react';
 import Section from './Section';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 
 
 
 const Homepage = () => {
+  const session = useSession();
     const handleToDo = async (event) => {
         event.preventDefault();
         const newTodo = {
@@ -29,9 +32,10 @@ const Homepage = () => {
         event.target.reset();
       };
     return (
-        <div className='h-screen'>
-           <Section></Section>
-          
+        <div className=' flex h-full mx-auto items-top justify-center ' >
+        
+        {  session?.status === "authenticated" ?
+        <Section ></Section> : <Image src='/bg-home.png' width={300} height={300} alt='image'></Image> }
         
         </div>
     );
