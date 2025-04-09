@@ -4,9 +4,10 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
 
 const handler = NextAuth({
+  secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
 session : {
     strategy: 'jwt',
-    maxAge: 30 * 20 * 60 * 60
+    maxAge: 30 * 20 * 60 * 60,
 },
 providers : [
     CredentialsProvider({
