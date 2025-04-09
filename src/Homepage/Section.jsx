@@ -28,7 +28,7 @@ console.log(allTask)
       <div className='mt-3 '>
         {/* name of each tab group should be unique */}
 <div className="tabs tabs-box ">
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="All task" />
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="All task" defaultChecked />
   <div className="tab-content bg-base-100 border-base-300 p-6  ">
    
   <div className="overflow-x-auto mt-4 max-h-screen   ">
@@ -73,7 +73,7 @@ console.log(allTask)
 
   </div>
 
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 2" defaultChecked />
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 2"  />
   <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
 
   <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 3" />
