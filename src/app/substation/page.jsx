@@ -7,6 +7,8 @@ import React, { useEffect, useState } from "react";
 const page = () => {
   const pathname = usePathname();
   console.log(pathname);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const removeChar = "/";
   const currentSection = pathname.replace(removeChar, "");
@@ -26,10 +28,15 @@ const page = () => {
     const result = await resp.json();
     console.log(result.sectionList);
     setSubstationData(result.sectionList);
+    setIsLoading(false)
   };
   useEffect(() => {
     loadData();
   }, []);
+
+if(isLoading){
+  return <div className=" h-screen flex justify-center "><span className="loading  loading-bars loading-xl"></span></div>
+}
 
   return (
     <div className="mt-2 p-4">

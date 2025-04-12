@@ -6,6 +6,10 @@ import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Link from 'next/link';
 
+import Pending from './Pending';
+import Done from './Done';
+import Today from './Today';
+
 const Section =  () => {
 // const [allSections, setAllSections] = useState([])
 const [allTask, setAllTask] = useState([])
@@ -68,16 +72,16 @@ console.log(allTask)
     </table>
   </div>
     
-
-  
-
   </div>
 
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 2"  />
-  <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="Pending"  />
+  <div className="tab-content bg-base-100 border-base-300 p-6"><Pending></Pending></div>
 
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="Tab 3" />
-  <div className="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="Done" />
+  <div className="tab-content bg-base-100 border-base-300 p-6"><Done></Done></div>
+
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="Today List" />
+  <div className="tab-content bg-base-100 border-base-300 p-6"><Today></Today></div>
 </div>
       </div>
 
