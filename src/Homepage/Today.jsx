@@ -7,13 +7,15 @@ import { RiDeleteBin5Line } from 'react-icons/ri';
 const Today = () => {
 
     const [todayTask, setTodayTask] = useState([])
-
+const loadTodayTask =async () =>{
+  const resp =await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/today/api`)
+       const result = await resp.json();
+       setTodayTask(result.results)
+}
     useEffect(()=>{
-        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/today/api`)
-        .then(res => res.json())
-       
-        .then(data => setTodayTask(data.results))
-       
+     
+      loadTodayTask()
+
     },[])
 console.log(todayTask)
 
@@ -34,7 +36,7 @@ console.log(todayTask)
         </tr>
       </thead>
       <tbody className='text-black'>
-         {todayTask?.map((substation, index) => (
+         {todayTask.map((substation, index) => (
           <tr key={substation._id}>
             <th>{index + 1}</th>
             <td>{substation.name}</td>

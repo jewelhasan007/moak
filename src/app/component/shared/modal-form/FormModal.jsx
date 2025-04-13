@@ -77,6 +77,7 @@ const FormModal = () => {
                 name="name"
                 placeholder="Task Name"
                 className="input input-md"
+                required
               />
               <span>Task Name</span>
             </label>
