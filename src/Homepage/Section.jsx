@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Pending from './Pending';
 import Done from './Done';
 import Today from './Today';
+import { toast } from 'react-toastify';
 
 const Section =  () => {
 // const [allSections, setAllSections] = useState([])
@@ -26,6 +27,18 @@ useEffect(()=>{
 },[])
 console.log(allTask)
  
+const handleDelete = async (id) =>{
+  console.log(id)
+  const deleteData = await fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/add-task/${id}`,{
+method: "DELETE",
+  });
+  const resp = await deleteData.json();
+  console.log(resp)
+  if(resp?.response?.deletedCount > 0){
+    loadSections();
+    toast.success("Deleted Succesfully");
+  }
+}
     return (
        <div className='' >
 
@@ -64,9 +77,10 @@ console.log(allTask)
             >
               {substation.status}
             </td>
-            <td className='text-gray-400 tooltip' data-tip="Edit"><Link href={substation.name}><FaRegEdit /></Link></td>
-            <td className='text-red-400 tooltip' data-tip="Delete"><Link href={substation.name}><RiDeleteBin5Line /></Link></td>
+            <td className='text-gray-400 tooltip' data-tip="Edit"><Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/edit-task/${substation._id}`}><FaRegEdit /></Link></td>
+            <td className='text-red-400 tooltip' data-tip="Delete"><Link href="#" onClick={ (e) => {e.preventDefault(); handleDelete(substation._id)}}><RiDeleteBin5Line /></Link></td>
           </tr>
+         
         ))}
       </tbody>
     </table>
