@@ -53,44 +53,50 @@ const [modalClose, setModalClose] = useState(false);
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            {allSections?.map((item) => (
-              <li key={item.path}>
-                <Link
-                  style={{
-                    color: pathname === `${item.path}` ? activeColor : "black",
-                    textDecoration:
-                      pathname === `${item.path}` ? "underline" : "none",
-                  }}
-                  className="font-bold m-3 hover:text-primary"
-                  href={item.path}
-                  key={item.path}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
+         {  session?.status === "authenticated" ?
+        <>
+        {allSections?.map((item) => (
+          <li key={item.path}>
+            <Link
+              style={{
+                color: pathname === `${item.path}` ? activeColor : "black",
+                textDecoration:
+                  pathname === `${item.path}` ? "underline" : "none",
+              }}
+              className="font-bold m-3 hover:text-primary"
+              href={item.path}
+              key={item.path}
+            >
+              {item.title}
+            </Link>
+          </li>
+        ))} </> : <p>Please login</p> }
+
+           
           </ul>
         </div>
        <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">CCDL VRM EE</Link></button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-sm menu-horizontal px-1 ">
-          {allSections?.map((item) => (
-            <li key={item.path}>
-              <Link
-                style={{
-                  color: pathname === `${item.path}` ? activeColor : "black",
-                  textDecoration:
-                    pathname === `${item.path}` ? "underline" : "none",
-                }}
-                className="font-bold m-3 hover:text-primary"
-                href={item.path}
-                key={item.path}
-              >
-                {item.title}
-              </Link>
-            </li>
-          ))}
+        {  session?.status === "authenticated" ?
+        <>
+        {allSections?.map((item) => (
+          <li key={item.path}>
+            <Link
+              style={{
+                color: pathname === `${item.path}` ? activeColor : "black",
+                textDecoration:
+                  pathname === `${item.path}` ? "underline" : "none",
+              }}
+              className="font-bold m-3 hover:text-primary"
+              href={item.path}
+              key={item.path}
+            >
+              {item.title}
+            </Link>
+          </li>
+        ))} </> : <p>Please Login First...!!!</p> }
         </ul>
       </div>
 

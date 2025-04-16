@@ -10,6 +10,7 @@ import Pending from './Pending';
 import Done from './Done';
 import Today from './Today';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Section =  () => {
 // const [allSections, setAllSections] = useState([])
@@ -29,15 +30,39 @@ console.log(allTask)
  
 const handleDelete = async (id) =>{
   console.log(id)
-  const deleteData = await fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/add-task/${id}`,{
-method: "DELETE",
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then( async(result) => {
+    if (result.isConfirmed) {
+      const deleteData =await  fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/add-task/${id}`,{
+        method: "DELETE",
+          });
+          const resp = await  deleteData.json();
+          console.log(resp)
+
+          if(resp?.response?.deletedCount > 0){
+            loadSections();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+            // toast.success("Deleted Succesfully");
+          }
+
+    
+    }
   });
-  const resp = await deleteData.json();
-  console.log(resp)
-  if(resp?.response?.deletedCount > 0){
-    loadSections();
-    toast.success("Deleted Succesfully");
-  }
+
+
+ 
 }
     return (
        <div className='' >
