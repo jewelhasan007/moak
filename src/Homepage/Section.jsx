@@ -70,7 +70,7 @@ const handleDelete = async (id) =>{
       <div className='mt-3 '>
         {/* name of each tab group should be unique */}
 <div className="tabs tabs-box ">
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="All task" defaultChecked />
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="All task"  />
   <div className="tab-content bg-base-100 border-base-300 p-6  ">
    
   <div className="overflow-x-auto mt-4 max-h-screen   ">
@@ -119,7 +119,7 @@ const handleDelete = async (id) =>{
   <input type="radio" name="my_tabs_6" className="tab" aria-label="Done" />
   <div className="tab-content bg-base-100 border-base-300 p-6"><Done></Done></div>
 
-  <input type="radio" name="my_tabs_6" className="tab" aria-label="Today List" />
+  <input type="radio" name="my_tabs_6" className="tab" aria-label="Today List"  defaultChecked/>
   <div className="tab-content bg-base-100 border-base-300 p-6"><Today></Today></div>
 </div>
       </div>

@@ -9,14 +9,13 @@ import FormModal from "./modal-form/FormModal";
 import Profile from "./Profile";
 import { useSession } from "next-auth/react";
 
-
 const Navbar = () => {
   const session = useSession();
   console.log(session)
   const pathname = usePathname();
   const router = useRouter();
   const activeColor = "#0070f3";
-const [modalClose, setModalClose] = useState(false);
+  const [modalClose, setModalClose] = useState(false);
   const [allSections, setAllSections] = useState([]);
   useEffect(() => {
     const loadSections = async () => {
@@ -25,8 +24,6 @@ const [modalClose, setModalClose] = useState(false);
     };
     loadSections();
   }, []);
-
-
 
   return (
     <div className="navbar bg-gray-100 shadow-sm">
