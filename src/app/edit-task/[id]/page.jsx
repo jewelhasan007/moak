@@ -8,9 +8,9 @@ import { toast } from "react-toastify";
 const page =  ({params}) => {
   const unwrappedParams = React.use(params);
 const [task, setTask] = useState([])
-
+console.log(unwrappedParams)
 const loadTask = async() =>{
-const taskDetails = await fetch(`http://localhost:3000/edit-task/api/${unwrappedParams.id}`)
+const taskDetails = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/edit-task/api/${unwrappedParams.id}`)
 
 const data = await taskDetails.json();
 setTask(data.response)
@@ -34,7 +34,7 @@ console.log(task)
           status: e.target.status.value,
           tag: e.target.tag.value,
         }
-        const resp = await fetch(`http://localhost:3000/edit-task/api/${unwrappedParams.id}`,{
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/edit-task/api/${unwrappedParams.id}`,{
           method: "PATCH",
           body : JSON.stringify(updatedData),
           headers: {
