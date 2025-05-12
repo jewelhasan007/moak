@@ -23,26 +23,21 @@
   "path" : "/portfolio",
   "section":"portfolio"
  },
+
  {
         "id" : 5,
-  "title": "Service",
-  "path" : "/service",
-  "section":"service"
- },
- {
-        "id" : 6,
   "title": "Experience",
   "path" : "/experience",
   "section":"experience"
  },
  {
-        "id" : 7,
+        "id" : 6,
   "title": "Blog",
   "path" : "/blog",
   "section":"blog"
  },
  {
-        "id" : 8,
+        "id" : 7,
   "title": "Contact",
   "path" : "/contact",
   "section":"contact"
