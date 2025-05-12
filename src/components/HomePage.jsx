@@ -18,10 +18,10 @@ const HomePage = () => {
                </div>
                <div>
               <div>
-                  <Image 
-                src='/banner.jpg'
-                width={400}
-                height={400}
+                  <Image className='border rounded-2xl'
+                src='/banner1.jpg'
+                width={250}
+                height={250}
                 alt='banner image'
                 ></Image>
               </div>
