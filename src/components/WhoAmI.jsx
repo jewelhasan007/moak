@@ -21,7 +21,7 @@ const WhoAmI = () => {
              {
             amI.map((item)=>(
 
-                 <div className="card bg-base-100 w-96 shadow-sm ">
+                 <div key={item.id} className="card bg-base-100 w-96 shadow-sm ">
   <figure className="px-10 pt-10">
     <img
       src={item.image}
