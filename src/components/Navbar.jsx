@@ -1,26 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
-import { navItemsDB } from "./navItems";
-import { toast } from "react-toastify";
-import FormModal from "./modal-form/FormModal";
-import Profile from "./Profile";
-import { useSession } from "next-auth/react";
+
 
 const Navbar = () => {
-  const session = useSession();
-  console.log(session)
-  const pathname = usePathname();
-  const router = useRouter();
+
   const activeColor = "#0070f3";
-  const [modalClose, setModalClose] = useState(false);
+    const pathname = usePathname();
   const [allSections, setAllSections] = useState([]);
   useEffect(() => {
     const loadSections = async () => {
-      const sections = await navItemsDB();
-      setAllSections(sections.services);
+    
+      const sections = await fetch('./navItems.json');
+      const data = await sections.json();
+      console.log(data.allSections)
+      setAllSections(data.allSections);
     };
     loadSections();
   }, []);
@@ -50,36 +47,35 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-         {  session?.status === "authenticated" ?
-        <>
-        {allSections?.map((item) => (
-          <li key={item.path}>
+         
+        
+        {allSections?.map((itemSmall) => (
+          <li key={itemSmall.id}>
             <Link
               style={{
-                color: pathname === `${item.path}` ? activeColor : "black",
+                color: pathname === `${itemSmall.path}` ? activeColor : "black",
                 textDecoration:
-                  pathname === `${item.path}` ? "underline" : "none",
+                  pathname === `${itemSmall.path}` ? "underline" : "none",
               }}
               className="font-bold m-3 hover:text-primary"
-              href={item.path}
-              key={item.path}
+              href={itemSmall.path}
+              
             >
-              {item.title}
+              {itemSmall.title}
             </Link>
           </li>
-        ))} </> : <p>Please login</p> }
+        ))} 
 
            
           </ul>
         </div>
-       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">CCDL VRM EE</Link></button>
+       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Moushumi Akter</Link></button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-sm menu-horizontal px-1 ">
-        {  session?.status === "authenticated" ?
-        <>
+        
         {allSections?.map((item) => (
-          <li key={item.path}>
+          <li key={item.id}>
             <Link
               style={{
                 color: pathname === `${item.path}` ? activeColor : "black",
@@ -88,25 +84,17 @@ const Navbar = () => {
               }}
               className="font-bold m-3 hover:text-primary"
               href={item.path}
-              key={item.path}
+            
             >
               {item.title}
             </Link>
           </li>
-        ))} </> : <p>Please Login First...!!!</p> }
+        ))}
         </ul>
       </div>
 
       <div className="navbar-end">
-      
-{/* Add Modal Form*/}
-<FormModal ></FormModal>
 
-    { !session.data ? 
-   <Link href={'/login'}><button className="btn btn-sm btn-primary">Login</button></Link> 
-   : 
-   <Profile></Profile>
-  }  
 
         {/* Login Button */}
         <div>

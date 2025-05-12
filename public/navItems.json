@@ -1,66 +1,51 @@
 { "allSections" : [
     {
+        "id" : 1,
     "title" :"Home",
     "path":"/",
     "section":"home"
     },
-
-    {
-      "title" :"CHMC",
-      "path": "/chmc",
-      "section":"chmc"
-    },
-    {
-      "title" :"REB",
-      "path": "/reb",
-      "section":"reb"
-    },
-    {
-  
-      "title":"33kV SS",
-      "path" : "/substation",
-      "section":"substation"
-    },
-    {
-      "title" :"Email",
-      "path": "/email",
-      "section":"email"
-    },
-    {
-  
-      "title":"Note",
-      "path" : "/note",
-      "section":"note"
-    },
-    {
-      "title": "Project work",
-      "path": "/overall",
-      "section":"overall"
-    },
-    {
-        "title": "Manpower",
-        "path" : "/manpower",
-        "section":"manpower"
-     },
-    {
-        "title": "Mech Work",
-        "path" : "/mech",
-        "section":"mech"
-     },
-     {
-      "title": "Civil Work",
-      "path" : "/civil",
-      "section":"civil"
-   },
    {
-    "title": "Purchase",
-    "path" : "/purchase",
-    "section":"purchase"
+        "id" : 2,
+    "title": "About Me",
+    "path" : "/about",
+    "section":"about"
  },
  {
-  "title": "Miscellaneous",
-  "path" : "/miscellaneous",
-  "section":"miscellaneous"
+        "id" : 3,
+  "title": "Service",
+  "path" : "/service",
+  "section":"service"
+ },
+ {
+        "id" : 4,
+  "title": "Portfolio",
+  "path" : "/portfolio",
+  "section":"portfolio"
+ },
+ {
+        "id" : 5,
+  "title": "Service",
+  "path" : "/service",
+  "section":"service"
+ },
+ {
+        "id" : 6,
+  "title": "Experience",
+  "path" : "/experience",
+  "section":"experience"
+ },
+ {
+        "id" : 7,
+  "title": "Blog",
+  "path" : "/blog",
+  "section":"blog"
+ },
+ {
+        "id" : 8,
+  "title": "Contact",
+  "path" : "/contact",
+  "section":"contact"
  }
   ]
 }
