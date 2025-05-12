@@ -17,27 +17,15 @@
   "path" : "/service",
   "section":"service"
  },
- {
-        "id" : 4,
-  "title": "Portfolio",
-  "path" : "/portfolio",
-  "section":"portfolio"
- },
 
  {
-        "id" : 5,
-  "title": "Experience",
-  "path" : "/experience",
-  "section":"experience"
- },
- {
-        "id" : 6,
+        "id" : 4,
   "title": "Blog",
   "path" : "/blog",
   "section":"blog"
  },
  {
-        "id" : 7,
+        "id" : 5,
   "title": "Contact",
   "path" : "/contact",
   "section":"contact"

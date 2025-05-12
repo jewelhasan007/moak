@@ -14,7 +14,7 @@ const page = () => {
                 </div>
             
              <div className='p-2'>
-                  <Image className=' w-80 h-80 rounded-full overflow-hidden border-amber-300 shadow-amber-300 border-2'
+                  <Image className=' w-80 h-80 rounded-full overflow-hidden border-pink-500 shadow-pink-500 border-2'
                 src='/banner1.jpg'
                 width={250}
                 height={250}

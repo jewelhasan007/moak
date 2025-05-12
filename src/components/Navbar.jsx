@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
 
-  const activeColor = "#0070f3";
+  const activeColor = "#d62976";
     const pathname = usePathname();
   const [allSections, setAllSections] = useState([]);
   useEffect(() => {
@@ -23,7 +23,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar bg-gray-100 shadow-sm">
+    <div className="navbar bg-pink-100 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,12 +45,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
           >
          
         
         {allSections?.map((itemSmall) => (
-          <li key={itemSmall.id}>
+          <li key={itemSmall.id} >
             <Link
               style={{
                 color: pathname === `${itemSmall.path}` ? activeColor : "black",
@@ -72,10 +72,10 @@ const Navbar = () => {
        <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Mawsumi Akter</Link></button>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu-sm menu-horizontal px-1 ">
+        <ul className="menu-md menu-horizontal ">
         
         {allSections?.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="px-3" >
             <Link
               style={{
                 color: pathname === `${item.path}` ? activeColor : "black",
