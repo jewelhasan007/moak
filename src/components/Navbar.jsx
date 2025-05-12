@@ -69,7 +69,7 @@ const Navbar = () => {
            
           </ul>
         </div>
-       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Moushumi Akter</Link></button>
+       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Mawsumi Akter</Link></button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-sm menu-horizontal px-1 ">
