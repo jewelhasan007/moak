@@ -33,7 +33,7 @@ const Cart2 = () => {
   className="hero min-h-auto min-w-auto"
   style={{
     backgroundImage:
-      `url(${cart.image})`,
+      `url(${cart.image})`, border: "2px solid", borderRadius: "8px", borderColor : "gray",
   }}
 >
   <div className="hero-overlay"></div>
