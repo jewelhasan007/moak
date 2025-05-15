@@ -26,18 +26,6 @@
 
  {
         "id" : 5,
-  "title": "Experience",
-  "path" : "/experience",
-  "section":"experience"
- },
- {
-        "id" : 6,
-  "title": "Blog",
-  "path" : "/blog",
-  "section":"blog"
- },
- {
-        "id" : 7,
   "title": "Contact",
   "path" : "/contact",
   "section":"contact"
