@@ -10,7 +10,7 @@ const page = () => {
                 <div className='space-y-3'>
                     
                      <h1 className=' justify-around w-[550px] text-4xl text-pink-500 p-1 text-justify'>My Name is Mawsumi Akter.</h1>
-                     <p className=' justify-around w-[550px] text-4xl text-pink-500 p-1 text-justify'> I'm a Digital Marketer Based In Bangladesh And This Is A Selection Of My Poersonal And Professional Work.</p>
+                     <p className=' lg:justify-around w-[550px] text-4xl text-pink-500 p-1 lg:text-justify'> I'm a Digital Marketer Based In Bangladesh And This Is A Selection Of My Poersonal And Professional Work.</p>
                 </div>
             
              <div className='p-2'>

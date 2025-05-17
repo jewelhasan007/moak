@@ -15,15 +15,15 @@ const HomePage = () => {
                 <div className='space-y-5 px-5'>    
                 <h1>Hi! I am Mawsumi Akter</h1>
                 
-                <h1 className='text-4xl text-amber-700' >
+                <h1 className='text-2xl text-amber-700' >
                     <TypeAnimation
         sequence={[
           "I'm a Digital Marketer",
-          1000,
+          3000,
           "I'm a SEO Expert",
-          1000,
+          3000,
           "I'm a Content Writer",
-          1000,
+          3000,
         ]}
         speed={50}
         repeat={Infinity}
