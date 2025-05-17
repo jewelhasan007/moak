@@ -11,6 +11,16 @@ const Navbar = () => {
   const activeColor = "#d62976";
     const pathname = usePathname();
   const [allSections, setAllSections] = useState([]);
+  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  const handleDropdownClose = () => {
+    setIsDropdownOpen(false);
+  }
+
+
   useEffect(() => {
     const loadSections = async () => {
     
@@ -25,8 +35,8 @@ const Navbar = () => {
   return (
     <div className="navbar bg-pink-100 shadow-sm">
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div className={` ${isDropdownOpen ? 'dropdown' : ''}`}>
+          <div onClick={handleDropdownToggle} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -43,31 +53,31 @@ const Navbar = () => {
               />{" "}
             </svg>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
-          >
-         
-        
-        {allSections?.map((itemSmall) => (
-          <li key={itemSmall.id} >
-            <Link
-              style={{
-                color: pathname === `${itemSmall.path}` ? activeColor : "black",
-                textDecoration:
-                  pathname === `${itemSmall.path}` ? "underline" : "none",
-              }}
-              className="font-bold m-3 hover:text-primary"
-              href={itemSmall.path}
-              
+        {
+          isDropdownOpen && (
+            <ul
+              onClick={handleDropdownClose}
+              className="menu-md dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {itemSmall.title}
-            </Link>
-          </li>
-        ))} 
-
-           
-          </ul>
+              {allSections?.map((item) => (
+                <li key={item.id} className="px-3">
+                  <Link
+                    style={{
+                      color: pathname === `${item.path}` ? activeColor : "black",
+                      textDecoration:
+                        pathname === `${item.path}` ? "underline" : "none",
+                    }}
+                    className="font-bold m-3 hover:text-primary"
+                    href={item.path}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )
+}
+         
         </div>
        <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Mawsumi Akter</Link></button>
       </div>
