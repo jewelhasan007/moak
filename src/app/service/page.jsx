@@ -22,7 +22,7 @@ const page = () => {
              {
             amI.map((item)=>(
 
-                 <div key={item.id} className="card bg-base-100 w-96 shadow-sm  min-h-[400px] ">
+                 <div key={item.id} className="card bg-base-100 w-96 shadow-sm  min-h-[400px] shadow-indigo-500/50 ">
   <figure className="px-10 pt-10">
     <img
       src={item.image}
