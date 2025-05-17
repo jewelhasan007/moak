@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import React, { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
 
 
 const Navbar = () => {
@@ -79,7 +80,21 @@ const Navbar = () => {
 }
          
         </div>
-       <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Mawsumi Akter</Link></button>
+       <button className="btn btn-sm btn-outline btn-primary "> <Link href="/">Mawsumi Akter</Link> ||
+             <TypeAnimation 
+        sequence={[
+          "I'm a Digital Marketer",
+          3000,
+          "I'm a SEO Expert",
+          3000,
+          "I'm a Content Writer",
+          3000,
+        ]}
+        speed={50}
+        repeat={Infinity}
+        style={{ fontSize: '1.5em' }}
+      />
+       </button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-md menu-horizontal ">
