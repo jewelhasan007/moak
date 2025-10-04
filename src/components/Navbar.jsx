@@ -77,8 +77,7 @@ const Navbar = () => {
               ))}
             </ul>
           )
-}
-         
+}  
         </div>
       
       </div>
@@ -95,7 +94,6 @@ const Navbar = () => {
               }}
               className="font-bold m-3 hover:text-primary"
               href={item.path}
-            
             >
               {item.title}
             </Link>
@@ -103,10 +101,7 @@ const Navbar = () => {
         ))}
         </ul>
       </div>
-
       <div className="navbar-end">
-
-
         {/* Login Button */}
         <div>
         {/* <button className="btn btn-sm btn-outline btn-primary"> <Link href="/">Login</Link></button> */}
