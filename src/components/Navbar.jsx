@@ -34,7 +34,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar bg-pink-100 shadow-sm">
+    <div className="navbar bg-gray-200 shadow-sm">
       <div className="navbar-start">
         <div className={` ${isDropdownOpen ? 'dropdown' : ''}`}>
           <div onClick={handleDropdownToggle} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -80,27 +80,13 @@ const Navbar = () => {
 }
          
         </div>
-       <button className="btn btn-sm btn-outline btn-primary "> <Link href="/">Mawsumi Akter</Link> ||
-             <TypeAnimation 
-        sequence={[
-          "I'm a Digital Marketer",
-          3000,
-          "I'm a SEO Expert",
-          3000,
-          "I'm a Content Writer",
-          3000,
-        ]}
-        speed={50}
-        repeat={Infinity}
-        style={{ fontSize: '1.5em' }}
-      />
-       </button>
+      
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu-md menu-horizontal ">
         
         {allSections?.map((item) => (
-          <li key={item.id} className="px-3" >
+          <li key={item.id}  >
             <Link
               style={{
                 color: pathname === `${item.path}` ? activeColor : "black",

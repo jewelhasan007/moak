@@ -8,7 +8,7 @@ const Footer = () => {
 
     return (
 // footer-1
-<footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 pt-30">
+<footer className="footer sm:footer-horizontal footer-center bg-gray-300 text-base-content p-4 pt-30">
   <aside>
   <DayDate></DayDate>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by Mawsumi Akter</p>
