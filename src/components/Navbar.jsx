@@ -92,7 +92,7 @@ const Navbar = () => {
                 textDecoration:
                   pathname === `${item.path}` ? "underline" : "none",
               }}
-              className="font-bold m-3 hover:text-primary"
+              className="font-bold m-2 hover:text-primary"
               href={item.path}
             >
               {item.title}
